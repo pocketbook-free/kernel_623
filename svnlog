@@ -1,0 +1,238 @@
+------------------------------------------------------------------------
+r113 | Royal | 2013-03-13 16:50:41 +0800 (Wed, 13 Mar 2013) | 6 lines
+
+Front light 1KHz, adjust [0,31]
+
+Index: include/linux/bsp_version.h
+Index: arch/arm/mach-mx5/mx50_rdp.c
+Index: drivers/video/backlight/backlight.c
+
+------------------------------------------------------------------------
+r112 | Royal | 2013-03-13 15:29:57 +0800 (Wed, 13 Mar 2013) | 4 lines
+
+Release version 1.0.4
+
+Index: Makefile
+
+------------------------------------------------------------------------
+r111 | Ticuz | 2013-03-13 11:00:21 +0800 (Wed, 13 Mar 2013) | 9 lines
+
+[CHG] Brightness adjust range is [0, 63],Modify frequency 500HZ
+[CHG] Fix the bug:after resume from key and screen locked,the touch can't work.
+
+Index:
+arch/arm/mach-mx5/mx50_rdp.c
+drivers/input/touchscreen/elan_touch_i2c.c
+drivers/video/backlight/backlight.c
+
+
+------------------------------------------------------------------------
+r110 | Royal | 2013-03-12 17:43:12 +0800 (Tue, 12 Mar 2013) | 4 lines
+
+Add RTC alarm wakeup system.
+
+Index: drivers/rtc/rtc-mxc_v2.c
+
+------------------------------------------------------------------------
+r108 | Royal | 2013-03-09 17:34:57 +0800 (Sat, 09 Mar 2013) | 9 lines
+
+CHRG_OFF gpio_6_11, led turns off when charge full at power off state.
+
+Index: include/linux/led/pmic_leds.h
+Index: drivers/mxc/pmic/mc13892/pmic_leds.c
+Index: drivers/mxc/pmic/mc13892/pmic_battery.c
+Index: drivers/mxc/pmic/core/mc13892.c
+Index: drivers/power/cw2015_battery.c
+Index: drivers/power/max17043_battery.c
+
+------------------------------------------------------------------------
+r107 | bsp1 | 2013-03-09 16:25:40 +0800 (Sat, 09 Mar 2013) | 5 lines
+
+Add timer for feed watchdog when system power off with charging state.
+
+Index: drivers/watchdog/mxc_wdt.c
+Index: drivers/watchdog/mxc_wdt.h
+
+------------------------------------------------------------------------
+r106 | Royal | 2013-03-08 15:41:53 +0800 (Fri, 08 Mar 2013) | 11 lines
+
+[ADD] Hardware version control interface /proc/board_version
+EVT 1110; DVT 1111 R89 R88 R87 R86
+
+Index: arch/arm/mach-mx5/Makefile
+Index: arch/arm/mach-mx5/mx50_rdp.c
+Index: arch/arm/mach-mx5/version_control.c
+Index: arch/arm/mach-mx5/Kconfig
+
+[Note]Please make ep7a_defconfig
+Index: arch/arm/configs/ep7a_defconfig
+
+------------------------------------------------------------------------
+r97 | River.Y.Wang | 2013-03-06 16:04:48 +0800 (Wed, 06 Mar 2013) | 5 lines
+
+Development touch version reading interface.
+
+Index: include/linux/bsp_version.h
+Index: drivers/input/touchscreen/elan_touch_i2c.c
+
+------------------------------------------------------------------------
+r88 | River.Y.Wang | 2013-03-06 14:23:14 +0800 (Wed, 06 Mar 2013) | 5 lines
+
+brightness adjust range is [0, 15]
+
+Index: Makefile
+Index: drivers/video/backlight/backlight.c
+
+------------------------------------------------------------------------
+r87 | Ticuz | 2013-03-06 10:58:39 +0800 (Wed, 06 Mar 2013) | 3 lines
+
+Modify the interface of frontlight to 16 levels.
+Index:drivers/video/backlight/backlight.c
+
+------------------------------------------------------------------------
+r82 | River.Y.Wang | 2013-03-02 11:20:45 +0800 (Sat, 02 Mar 2013) | 4 lines
+
+Initial RSDn output low for power saving.
+
+Index: arch/arm/mach-mx5/mx50_rdp.c
+
+------------------------------------------------------------------------
+r81 | River.Y.Wang | 2013-03-02 11:16:30 +0800 (Sat, 02 Mar 2013) | 7 lines
+
+[CHG]Set front light 2kHz, use IPG_32k clock source, and power down at deep sleep mode.
+
+Index: arch/arm/mach-mx5/mx50_rdp.c
+Index: arch/arm/mach-mx5/clock_mx50.c
+Index: arch/arm/plat-mxc/pwm.c
+Index: drivers/video/backlight/pwm_bl.c
+
+------------------------------------------------------------------------
+r80 | bsp1 | 2013-02-28 16:09:08 +0800 (Thu, 28 Feb 2013) | 5 lines
+
+[Del] delete unuse file
+Index: remp
+Index: temp
+Index: objvm
+
+------------------------------------------------------------------------
+r79 | River.Y.Wang | 2013-02-28 14:54:15 +0800 (Thu, 28 Feb 2013) | 7 lines
+
+[CHG]Development i2c device busy issue.
+
+Index: drivers/power/cw2015_battery.c
+Index: drivers/power/max17043_battery.c
+Index: drivers/mfd/fp9928-core.c
+Index: drivers/i2c/busses/i2c-imx.c
+
+------------------------------------------------------------------------
+r78 | River.Y.Wang | 2013-02-27 17:25:36 +0800 (Wed, 27 Feb 2013) | 5 lines
+
+[CHG] Close audio power.
+
+Index: sound/soc/codecs/ssm2602.c
+Index: arch/arm/mach-mx5/mx50_rdp.c
+
+------------------------------------------------------------------------
+r76 | Ticuz | 2013-02-27 11:23:36 +0800 (Wed, 27 Feb 2013) | 13 lines
+
+Modify interface of frontlight
+Add macros for resolution of touch
+Repair the bug:i2c device can't suspend after first system suspend.
+
+Index:
+arch/arm/mach-mx5/mx50_rdp.c
+drivers/input/touchscreen/elan_touch_i2c.c
+drivers/video/backlight/backlight.c
+drivers/video/backlight/pwm_bl.c
+
+
+
+
+------------------------------------------------------------------------
+r69 | River.Y.Wang | 2013-02-19 16:10:04 +0800 (Tue, 19 Feb 2013) | 8 lines
+
+Undefine vcom test mode.
+Release BSP 1.0.2
+
+Index: kernel/printk.c
+Index: Makefile
+Index: include/linux/bsp_version.h
+Index: drivers/video/mxc/mxc_epdc_fb.c
+
+------------------------------------------------------------------------
+r67 | River.Y.Wang | 2013-02-19 14:29:56 +0800 (Tue, 19 Feb 2013) | 4 lines
+
+Vcom output adjustment method:analog <=> digital.
+
+Index: drivers/regulator/fp9928-regulator.c
+
+------------------------------------------------------------------------
+r66 | River.Y.Wang | 2013-02-19 14:08:05 +0800 (Tue, 19 Feb 2013) | 4 lines
+
+Add MFD core config.
+
+Index: arch/arm/configs/ep7a_defconfig
+
+------------------------------------------------------------------------
+r65 | River.Y.Wang | 2013-02-19 12:41:21 +0800 (Tue, 19 Feb 2013) | 2 lines
+
+ignore file
+
+------------------------------------------------------------------------
+r64 | River.Y.Wang | 2013-02-19 12:33:27 +0800 (Tue, 19 Feb 2013) | 5 lines
+
+Close vcom when poweroff epd.
+
+Index: drivers/input/keyboard/gpio_keys.c
+Index: drivers/video/mxc/mxc_epdc_fb.c
+
+------------------------------------------------------------------------
+r63 | River.Y.Wang | 2013-02-19 12:32:08 +0800 (Tue, 19 Feb 2013) | 2 lines
+
+ignore
+
+------------------------------------------------------------------------
+r62 | bsp1 | 2013-02-04 11:26:59 +0800 (Mon, 04 Feb 2013) | 4 lines
+
+Release version 1.0.1
+
+Index Makefile
+
+------------------------------------------------------------------------
+r60 | bsp1 | 2013-02-04 10:37:30 +0800 (Mon, 04 Feb 2013) | 1 line
+
+Release version 1.0.1
+------------------------------------------------------------------------
+r58 | bsp1 | 2013-02-02 17:03:00 +0800 (Sat, 02 Feb 2013) | 1 line
+
+[Mod] Modify the report coordinate
+------------------------------------------------------------------------
+r55 | bsp1 | 2013-02-02 11:45:37 +0800 (Sat, 02 Feb 2013) | 1 line
+
+[Mod] modify the return value when can not detect the gasgauge
+------------------------------------------------------------------------
+r54 | River.Y.Wang | 2013-02-02 11:27:13 +0800 (Sat, 02 Feb 2013) | 8 lines
+
+Release version 1.0.0
+
+Index: kernel/printk.c
+Index: Makefile
+Index: include/linux/bsp_version.h
+Index: drivers/regulator/fp9928-regulator.c
+Index: drivers/regulator/core.c
+
+------------------------------------------------------------------------
+r52 | bsp1 | 2013-02-01 17:17:34 +0800 (Fri, 01 Feb 2013) | 1 line
+
+[Mod] modify gasgauge driver
+------------------------------------------------------------------------
+r49 | bsp1 | 2013-02-01 14:11:56 +0800 (Fri, 01 Feb 2013) | 7 lines
+
+Add source code
+make ep7a_defconfig
+make 
+to compile code
+
+
+
+------------------------------------------------------------------------

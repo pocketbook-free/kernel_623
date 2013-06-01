@@ -1,0 +1,3 @@
+config WAVEFORM_VERSION
+	tristate "Read waveform version"
+	default y

@@ -1,0 +1,139 @@
+syntax: glob
+
+*.swp
+tags
+
+arch/arm/configs/last_defconfig
+
+# this file generated each time we start build process
+# It should be used only if we continue to support netronix header
+gen_header
+# this file is generated each build and contains current hg hash
+localversion
+
+#from .gitignore
+#
+# NOTE! Don't add files that are generated in specific
+# subdirectories here. Add them in the ".gitignore" file
+# in that subdirectory instead.
+#
+# NOTE! Please use 'git ls-files -i --exclude-standard'
+# command after changing this file, to see if there are
+# any tracked files which get ignored after the change.
+#
+# Normal rules
+#
+#.*
+*.o
+*.o.*
+*.a
+*.s
+*.ko
+*.so
+*.so.dbg
+*.mod.c
+*.i
+*.lst
+*.symtypes
+*.order
+modules.builtin
+*.elf
+*.bin
+*.gz
+*.bz2
+*.lzma
+*.lzo
+*.patch
+*.gcno
+# gallen add rule [.
+svn-commit.*
+.svn
+*.cmd
+make.log
+# gallen add rule ].
+#
+# Top-level generic files
+#
+/tags
+/TAGS
+/linux
+/vmlinux
+/vmlinuz
+/System.map
+/Module.markers
+/Module.symvers
+
+#
+# Generated include files
+#
+include/config
+include/linux/version.h
+include/generated
+
+# stgit generated dirs
+patches-*
+
+# quilt's files
+patches
+series
+
+# cscope files
+cscope.*
+ncscope.*
+
+# gnu global files
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+
+*.orig
+*~
+
+#usr
+#
+# Generated files
+#
+usr/gen_init_cpio
+usr/initramfs_data.cpio
+usr/initramfs_data.cpio.gz
+usr/initramfs_data.cpio.bz2
+usr/initramfs_data.cpio.lzma
+usr/initramfs_list
+usr/include
+
+#arch/arm/boot/
+arch/arm/boot/Image
+arch/arm/boot/zImage
+arch/arm/boot/xipImage
+arch/arm/boot/bootpImage
+arch/arm/boot/uImage
+
+.version
+Module.symvers
+arch/arm/boot/compressed/piggy.gzip
+arch/arm/boot/compressed/vmlinux
+arch/arm/kernel/vmlinux.lds
+scripts/basic/docproc
+scripts/basic/fixdep
+scripts/basic/hash
+scripts/bin2c
+scripts/conmakehash
+scripts/genksyms/genksyms
+scripts/kallsyms
+scripts/kconfig/conf
+scripts/mod/mk_elfconfig
+scripts/mod/modpost
+.missing-syscalls.d
+.tmp_System.map
+.tmp_kallsyms1.S
+.tmp_kallsyms2.S
+.tmp_vmlinux1
+.tmp_vmlinux2
+System.map
+drivers/char/defkeymap.c
+kernel/config_data.h
+kernel/timeconst.h
+lib/crc32table.h
+lib/gen_crc32table
+vmlinux

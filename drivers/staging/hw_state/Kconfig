@@ -1,0 +1,12 @@
+#
+# 
+#
+
+menu "Hardware board state devices"
+
+config HW_STATE
+	tristate "Hard ware board state support"
+	default y
+---help---
+	acquire the devices state
+endmenu
